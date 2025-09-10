@@ -15,7 +15,6 @@ valjundfail <- "valjund.csv"
 
 # Defineerime salt (soovitatav: juhuslik string) – siin võiks muidugi midagi randomiga ka genereerida
 salt <- "test123"
-#"minuSalajaneSalt123"
 
 # Loeme andmed sisendfailist
 andmed <- read.csv(sisendfail, stringsAsFactors = FALSE)
@@ -36,5 +35,6 @@ andmed$ID <- sapply(andmed$ID, krupteeri_ID, salt = salt)
 
 # Kirjutame krüpteeritud andmed faili
 write.csv(andmed, valjundfail, row.names = FALSE)
+
 
 cat("Andmed töödeldud ja kirjutatud faili:", valjundfail, "\n")
